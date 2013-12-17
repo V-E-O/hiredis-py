@@ -197,7 +197,7 @@ static int Reader_init(hiredis_ReaderObject *self, PyObject *args, PyObject *kwd
         if (PyUnicode_Check(encodingObj))
             encbytes = PyUnicode_AsASCIIString(encodingObj);
         else
-            encbytes = PyObject_Bytes(encodingObj);
+            encbytes = PyObject_Str(encodingObj);
 
         if (encbytes == NULL)
             return -1;
