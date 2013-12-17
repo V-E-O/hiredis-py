@@ -58,7 +58,6 @@ static void *tryParentize(const redisReadTask *task, PyObject *obj) {
     PyObject *parent;
     if (task && task->parent) {
         parent = (PyObject*)task->parent->obj;
-        assert(parent->ob_type == PyList_Type);
         PyList_SET_ITEM(parent, task->idx, obj);
     }
     return obj;
